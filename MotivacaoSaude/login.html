@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/login.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bungee&family=Cantora+One&family=Luckiest+Guy&family=Nova+Square&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+  <title>Login</title>
+</head>
+ <body>
+  <div class="login-container">
+    <!-- GIF animado -->
+    <img src="images/zenitsu.gif" alt="Gif Login">
+
+    <h2>Login</h2>
+    <form>
+      <input type="text" placeholder="Usuário" required>
+      <input type="password" placeholder="Senha" required>
+      <button type="submit">Entrar</button>
+    </form>
+
+    <div class="extra-links">
+      <a id="openForgot">Esqueceu a senha?</a>
+      <a id="openModal">Cadastrar</a>
+    </div>
+  </div>
+
+ <!-- Modal de Cadastro -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <span class="close-btn" id="closeModal">&times;</span>
+    <h2>Cadastrar</h2>
+    <form id="registerForm">
+      <input type="text" placeholder="Nome completo" required>
+      <input type="email" placeholder="E-mail" required>
+      <input type="password" placeholder="Senha" required>
+      <button type="submit">Criar Conta</button>
+    </form>
+    <!-- Mensagem de sucesso -->
+    <p id="registerSuccess" style="display:none; color:#00ff00; margin-top:10px; font-size:14px;">
+      Sua conta foi criada com sucesso! Enviamos uma mensagem de confirmação para seu e-mail.
+    </p>
+  </div>
+</div>
+
+
+  <!-- Modal Esqueceu a Senha -->
+<div class="modal" id="forgotModal">
+  <div class="modal-content">
+    <span class="close-btn" id="closeForgot">&times;</span>
+    <h2>Recuperar Senha</h2>
+    <form id="forgotForm">
+      <input type="email" placeholder="Digite seu e-mail" required>
+      <button type="submit">Enviar Link</button>
+    </form>
+    <!-- Mensagem de sucesso -->
+    <p id="successMsg" style="display:none; color:#00ff00; margin-top:10px;">Link enviado com sucesso!</p>
+  </div>
+</div>
+<script>
+  const modal = document.getElementById("modal");
+  const openModal = document.getElementById("openModal");
+  const closeModal = document.getElementById("closeModal");
+  const registerForm = document.getElementById("registerForm");
+  const registerSuccess = document.getElementById("registerSuccess");
+
+  openModal.onclick = () => {
+    modal.style.display = "flex";
+    registerSuccess.style.display = "none"; // Resetar mensagem
+  }
+  closeModal.onclick = () => modal.style.display = "none";
+
+  // Evento de submit do cadastro
+  registerForm.addEventListener("submit", function(e) {
+    e.preventDefault(); // Previne envio real
+    registerSuccess.style.display = "block"; // Mostra mensagem
+    registerForm.reset(); // Limpa os campos
+  });
+
+  // Modal Esqueceu a senha
+  const forgotModal = document.getElementById("forgotModal");
+  const openForgot = document.getElementById("openForgot");
+  const closeForgot = document.getElementById("closeForgot");
+  const forgotForm = document.getElementById("forgotForm");
+  const successMsg = document.getElementById("successMsg");
+
+  openForgot.onclick = () => {
+    forgotModal.style.display = "flex";
+    successMsg.style.display = "none"; // Resetar mensagem
+  }
+  closeForgot.onclick = () => forgotModal.style.display = "none";
+
+  // Fechar modais clicando fora
+  window.onclick = (e) => { 
+    if (e.target == modal) modal.style.display = "none"; 
+    if (e.target == forgotModal) forgotModal.style.display = "none"; 
+  }
+
+  // Função para mostrar mensagem de sucesso ao enviar link
+  forgotForm.addEventListener("submit", function(e) {
+    e.preventDefault(); 
+    successMsg.style.display = "block"; 
+    forgotForm.reset(); 
+  });
+</script>

@@ -1,0 +1,129 @@
+    /* ===== Reset ===== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(to bottom, #FF370F, #332717);
+      font-family: 'Bungee', sans-serif;
+    }
+
+    .login-container {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 25px;
+      border-radius: 15px;
+      text-align: center;
+      width: 320px;
+      color: #fff;
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
+      backdrop-filter: blur(8px);
+    }
+
+    .login-container img {
+      width: 100px;
+      margin-bottom: 10px;
+    }
+
+    .login-container h2 {
+      margin-bottom: 15px;
+    }
+
+    .login-container input {
+      width: 90%;
+      padding: 10px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 8px;
+      outline: none;
+      font-size: 14px;
+    }
+
+    /* ===== Botões com gradiente animado ===== */
+    button {
+      width: 95%;
+      padding: 12px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 8px;
+      background: linear-gradient(90deg, #c24026, #ff6a00, #FF370F);
+      background-size: 300%;
+      color: #fff;
+      font-size: 14px;
+      cursor: pointer;
+      transition: 0.4s;
+      animation: gradientMove 3s linear infinite;
+    }
+
+    button:hover {
+      box-shadow: 0 0 18px #ff6a00;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 200% 50%; }
+    }
+
+    /* Links */
+    .extra-links {
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+    }
+
+    .extra-links a {
+      color: #fff;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    /* ===== Modal ===== */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.7);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: #1c1c1c;
+      padding: 25px;
+      border-radius: 12px;
+      width: 350px;
+      text-align: center;
+      color: #fff;
+      box-shadow: 0 0 25px #7a2b1b, 0 0 50px #ff6a00 inset;
+      animation: fadeIn 0.4s ease, lightning 2s infinite;
+    }
+
+    .modal-content h2 {
+      margin-bottom: 15px;
+    }
+
+    .modal-content input {
+      width: 90%;
+      padding: 10px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 8px;
+      outline: none;
+    }
+
+    .close-btn {
+      font-size: 22px;
+      color: #ff370f;
+      float: right;
+      cursor: pointer;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9);}
+      to { opacity: 1; transform: scale(1);}
+    }
+
+    
