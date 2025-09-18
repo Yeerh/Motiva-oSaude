@@ -1,21 +1,22 @@
-  <!DOCTYPE html>
-  <html lang="pt-BR">
-  <head>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/motiv.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bungee&family=Cantora+One&family=Luckiest+Guy&family=Nova+Square&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bungee&family=Cantora+One&family=Luckiest+Guy&family=Nova+Square&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
     <title>Equilibra</title>
-  </head>
-  <body>
-
+</head>
+<body>
+    <div id="hero-particles"></div>
     <header>
       <nav>
         <ul>
+          <li><a href="index.html" class="active">Início</a></li>
           <li><a href="#">Dicas</a></li>
           <li><a href="#">Livros</a></li>
           <li><a href="sobre.html">Sobre</a></li>
@@ -24,31 +25,30 @@
       </nav>
     </header>
 
-  <section class="hero">
-    <h2 class="bungee-hero gradient-text strong">Apenas Comece</h2>
-    <h2 class="bungee-hero gradient-text medium">Apenas Comece</h2>
-    <h2 class="bungee-hero gradient-text weak">Apenas Comece</h2>
-    <p>Inspire-se com reflexões, dicas práticas de bem-estar e recomendações de leitura transformadoras.</p>
-    <button>Quero me Inspirar</button>
-  </section>
-  <section class="motivacional">
-    <h2>Aprenda com Ronaldo</h2>
-    <div class="motivacional-content">
-      <video class="motivacional-video" controls controlslist="nodownload noremoteplayback noplaybackrate">
-        <source src="images/ssstik.io_@chute.decisivo_1757788066149.mp4" type="video/mp4">
-      </video>
-
-      <div class="motivacional-card">
-        <h3>Por que Ronaldo é inspiração?</h3>
-        <ul>
-          <h3>
-            uma rotina de treinos extremamente rigorosa, o levou a conquistar inúmeros títulos, recordes e prêmios individuais, tornando-se um dos maiores jogadores da história do futebol.
-            Mais do que talento, Cristiano Ronaldo representa trabalho duro, resiliência e disciplina, provando que é possível alcançar a grandeza com dedicação e perseverança.</h3>
-        </ul>
+    <section class="hero">
+      <h2 id="hero-title-1" class="bungee-hero gradient-text strong">Apenas Comece</h2>
+      <h2 id="hero-title-2" class="bungee-hero gradient-text medium">Apenas Comece</h2>
+      <h2 id="hero-title-3" class="bungee-hero gradient-text weak">Apenas Comece</h2>
+      <p>Inspire-se com reflexões, dicas práticas de bem-estar e recomendações de leitura transformadoras.</p>
+      <button id="inspire-btn">Quero me Inspirar</button>
+      <button id="quote-btn">Gerar Citação Motivacional</button>
+      <div id="quote-container" class="quote-container">
+        <p id="quote-text"></p>
       </div>
-    </div>
-  </section>
+    </section>
 
+    <section class="motivacional">
+      <h2>Aprenda com Ronaldo</h2>
+      <div class="motivacional-content">
+        <video class="motivacional-video" controls controlslist="nodownload noremoteplayback noplaybackrate">
+          <source src="images/ssstik.io_@chute.decisivo_1757788066149.mp4" type="video/mp4">
+        </video>
+        <div class="motivacional-card">
+          <h3>Por que Ronaldo é inspiração?</h3>
+          <p>Uma rotina de treinos extremamente rigorosa o levou a conquistar inúmeros títulos, recordes e prêmios individuais, tornando-se um dos maiores jogadores da história do futebol. Mais do que talento, Cristiano Ronaldo representa trabalho duro, resiliência e disciplina, provando que é possível alcançar a grandeza com dedicação e perseverança.</p>
+        </div>
+      </div>
+    </section>
 
     <section class="benefits">
       <h3>Por que acompanhar nosso conteúdo?</h3>
@@ -62,58 +62,222 @@
 
     <section class="testimonials">
       <h3>Depoimentos</h3>
-      <blockquote>
-        "As dicas me ajudaram a organizar melhor meus dias e a manter foco no que importa." — Fernanda M.
-      </blockquote>
-      <blockquote>
-        "Descobri livros incríveis que realmente mudaram minha forma de encarar desafios." — Carlos A.
-      </blockquote>
+      <div class="testimonial-carousel">
+        <blockquote class="testimonial active">As dicas me ajudaram a organizar melhor meus dias e a manter foco no que importa. — Fernanda M.</blockquote>
+        <blockquote class="testimonial">Descobri livros incríveis que realmente mudaram minha forma de encarar desafios. — Carlos A.</blockquote>
+        <div class="carousel-controls">
+          <button class="carousel-prev">◄</button>
+          <button class="carousel-next">►</button>
+        </div>
+      </div>
     </section>
 
     <section class="books">
-    <h3>📚 Livros Recomendados</h3>
-    <div class="books-grid">
-      <div class="book-card">
-        <img src="images/poder.png" alt="O Poder do Hábito">
-        <h4>O Poder do Hábito</h4>
-        <p>Charles Duhigg</p>
+      <h3>📚 Livros Recomendados</h3>
+      <div class="books-grid">
+        <div class="book-card" data-description="Descubra como os hábitos moldam sua vida e como transformá-los para alcançar seus objetivos.">
+          <img src="images/poder.png" alt="O Poder do Hábito">
+          <h4>O Poder do Hábito</h4>
+          <p>Charles Duhigg</p>
+        </div>
+        <div class="book-card" data-description="Aprenda a focar no que é essencial e elimine o desnecessário para uma vida mais produtiva.">
+          <img src="images/essencial.png" alt="Essencialismo">
+          <h4>Essencialismo</h4>
+          <p>Greg McKeown</p>
+        </div>
+        <div class="book-card" data-description="Explore como a mentalidade de crescimento pode transformar sua abordagem ao sucesso.">
+          <img src="images/mind.png" alt="Mindset">
+          <h4>Mindset: A Nova Psicologia do Sucesso</h4>
+          <p>Carol S. Dweck</p>
+        </div>
+        <div class="book-card" data-description="Transforme suas manhãs e sua vida com uma rotina matinal poderosa.">
+          <img src="images/milagre.png" alt="O Milagre da Manhã">
+          <h4>O Milagre da Manhã</h4>
+          <p>Hal Elrod</p>
+        </div>
       </div>
-      <div class="book-card">
-        <img src="images/essencial.png" alt="Essencialismo">
-        <h4>Essencialismo</h4>
-        <p>Greg McKeown</p>
-      </div>
-      <div class="book-card">
-        <img src="images/mind.png" alt="Mindset">
-        <h4>Mindset: A Nova Psicologia do Sucesso</h4>
-        <p>Carol S. Dweck</p>
-      </div>
-      <div class="book-card">
-        <img src="images/milagre.png" alt="O Milagre da Manhã">
-        <h4>O Milagre da Manhã</h4>
-        <p>Hal Elrod</p>
-      </div>
-    </div>
-    <div id="hero-particles"></div>
-  </section>
+    </section>
 
     <footer>
       <p>&copy; 2025 Motivação & Bem-Estar - Todos os direitos reservados</p>
     </footer>
-<script>
-  tsParticles.load("hero-particles", {
-    particles: {
-      number: { value: 50 },
-      color: { value: "#7793FE" },
-      shape: { type: "circle" },
-      opacity: { value: 0.5 },
-      size: { value: 3 },
-      move: { enable: true, speed: 0.5, direction: "top" }
-    },
-    interactivity: {
-      events: { onHover: { enable: true, mode: "repulse" } }
-    }
-  });
-</script>
-  </body>
-  </html>
+
+    <button id="scroll-top-btn" class="scroll-top-btn">↑</button>
+
+    <!-- Modal para detalhes do livro -->
+    <div id="book-modal" class="modal">
+      <div class="modal-content">
+        <span id="close-modal" class="close-btn">&times;</span>
+        <h3 id="modal-title"></h3>
+        <p id="modal-description"></p>
+      </div>
+    </div>
+
+    <script>
+      // Partículas
+      tsParticles.load("hero-particles", {
+        particles: {
+          number: { value: 50, density: { enable: true, value_area: 800 } },
+          color: { value: "#7793FE" },
+          shape: { type: "circle" },
+          opacity: { value: 0.5, random: true },
+          size: { value: 3, random: true },
+          move: { enable: true, speed: 0.5, direction: "top", random: false, out_mode: "out" }
+        },
+        interactivity: {
+          events: { onHover: { enable: true, mode: "repulse" }, onClick: { enable: true, mode: "push" } },
+          modes: { repulse: { distance: 100, duration: 0.4 }, push: { particles_nb: 4 } }
+        },
+        retina_detect: true
+      });
+
+      // Botão "Quero me Inspirar"
+      document.getElementById('inspire-btn').addEventListener('click', () => {
+        document.querySelector('.motivacional').scrollIntoView({ behavior: 'smooth' });
+      });
+
+      // Animação de entrada com Intersection Observer
+      const observerOptions = {
+        root: null,
+        threshold: 0.2
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('.hero, .motivacional, .benefits, .testimonials, .books').forEach(section => {
+        observer.observe(section);
+      });
+
+      // Carrossel de depoimentos
+      const testimonials = document.querySelectorAll('.testimonial');
+      const prevBtn = document.querySelector('.carousel-prev');
+      const nextBtn = document.querySelector('.carousel-next');
+      let currentTestimonial = 0;
+
+      function showTestimonial(index) {
+        testimonials.forEach((testimonial, i) => {
+          testimonial.classList.remove('active');
+          if (i === index) testimonial.classList.add('active');
+        });
+      }
+
+      prevBtn.addEventListener('click', () => {
+        currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+        showTestimonial(currentTestimonial);
+      });
+
+      nextBtn.addEventListener('click', () => {
+        currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+        showTestimonial(currentTestimonial);
+      });
+
+      // Auto-play do carrossel
+      setInterval(() => {
+        currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+        showTestimonial(currentTestimonial);
+      }, 5000);
+
+      // Destacar link ativo
+      const navLinks = document.querySelectorAll('nav ul li a');
+      navLinks.forEach(link => {
+        if (link.getAttribute('href') === 'index.html') {
+          link.classList.add('active');
+        }
+      });
+
+      // Efeito de digitação nos títulos hero
+      const heroTitles = [
+        document.getElementById('hero-title-1'),
+        document.getElementById('hero-title-2'),
+        document.getElementById('hero-title-3')
+      ];
+
+      heroTitles.forEach((title, index) => {
+        const text = title.textContent;
+        title.textContent = '';
+        let i = 0;
+
+        function typeWriter() {
+          if (i < text.length) {
+            title.textContent += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, 100);
+          }
+        }
+        setTimeout(typeWriter, index * 1000); // Atraso para cada título
+      });
+
+      // Modal para livros
+      const bookCards = document.querySelectorAll('.book-card');
+      const modal = document.getElementById('book-modal');
+      const modalTitle = document.getElementById('modal-title');
+      const modalDescription = document.getElementById('modal-description');
+      const closeModal = document.getElementById('close-modal');
+
+      bookCards.forEach(card => {
+        card.addEventListener('click', () => {
+          modalTitle.textContent = card.querySelector('h4').textContent;
+          modalDescription.textContent = card.getAttribute('data-description');
+          modal.style.display = 'flex';
+        });
+      });
+
+      closeModal.addEventListener('click', () => {
+        modal.style.display = 'none';
+      });
+
+      window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+          modal.style.display = 'none';
+        }
+      });
+
+      // Botão Voltar ao Topo
+      const scrollTopBtn = document.getElementById('scroll-top-btn');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+          scrollTopBtn.style.display = 'block';
+        } else {
+          scrollTopBtn.style.display = 'none';
+        }
+      });
+
+      scrollTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // Gerador de Citações Motivacionais
+      const quotes = [
+        "O sucesso é a soma de pequenos esforços repetidos dia após dia. — Robert Collier",
+        "Você não precisa ser ótimo para começar, mas precisa começar para ser ótimo. — Zig Ziglar",
+        "Acredite que você pode, e você está a meio caminho de conseguir. — Theodore Roosevelt",
+        "A disciplina é a ponte entre seus sonhos e suas conquistas. — Jim Rohn",
+        "O único limite para o seu sucesso é a sua própria imaginação. — Albert Einstein"
+      ];
+
+      const quoteBtn = document.getElementById('quote-btn');
+      const quoteText = document.getElementById('quote-text');
+
+      function showQuote() {
+        quoteText.style.opacity = 0;
+        setTimeout(() => {
+          const randomIndex = Math.floor(Math.random() * quotes.length);
+          quoteText.textContent = quotes[randomIndex];
+          quoteText.style.opacity = 1;
+        }, 300);
+      }
+
+      quoteBtn.addEventListener('click', showQuote);
+
+      // Mostrar uma citação inicial ao carregar a página
+      showQuote();
+    </script>
+</body>
+</html>
