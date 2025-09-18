@@ -150,6 +150,81 @@ nav ul li a:hover, nav ul li a.active {
     transition: opacity 0.3s ease;
 }
 
+/* ===== Proposal ===== */
+.proposal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: clamp(20px, 5vw, 40px) 0;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.proposal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.proposal h2 {
+    font-family: 'Bungee', sans-serif;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    color: #fff;
+    margin-bottom: clamp(15px, 3vw, 20px);
+}
+
+.proposal-content {
+    display: flex;
+    flex-direction: row; /* Força lado a lado como padrão */
+    gap: clamp(20px, 4vw, 40px); /* Espaçamento entre GIF e texto */
+    justify-content: center;
+    align-items: flex-start; /* Alinha os topos */
+    margin-top: clamp(15px, 3vw, 20px);
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.proposal-gif {
+    width: clamp(250px, 50vw, 500px);
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+.proposal-text {
+    width: clamp(250px, 40vw, 500px);
+    max-width: 100%;
+    background: linear-gradient(180deg, #493BF0, #2e2a7a);
+    border-left: 5px solid #7793FE;
+    padding: clamp(15px, 3vw, 20px);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+    overflow: auto;
+    height: auto; /* Altura dinâmica */
+}
+
+.proposal-text h3 {
+    font-family: 'Oswald', sans-serif;
+    color: #fffcfb;
+    margin-bottom: clamp(8px, 2vw, 12px);
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+}
+
+.proposal-text p {
+    color: #fff;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    line-height: 1.5;
+    margin-top: clamp(5px, 1.5vw, 10px);
+}
+
 /* ===== Motivacional ===== */
 .motivacional {
     display: flex;
@@ -484,6 +559,26 @@ footer {
         font-size: clamp(0.8rem, 2.5vw, 0.9rem);
     }
 
+    .proposal-content,
+    .motivacional-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .proposal-gif {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        aspect-ratio: 16/9;
+    }
+
+    .proposal-text {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        margin-top: clamp(15px, 3vw, 20px);
+    }
+
     .motivacional-video,
     .motivacional-card {
         width: 100%;
@@ -503,9 +598,22 @@ footer {
         gap: 15px;
     }
 
+    .proposal-content,
     .motivacional-content {
         flex-direction: column;
         align-items: center;
+    }
+
+    .proposal-gif {
+        width: clamp(250px, 50vw, 400px);
+        height: auto;
+        aspect-ratio: 16/9;
+    }
+
+    .proposal-text {
+        width: clamp(250px, 50vw, 400px);
+        height: auto;
+        margin-top: clamp(15px, 3vw, 20px);
     }
 
     .motivacional-video,
@@ -516,13 +624,28 @@ footer {
 }
 
 @media (min-width: 769px) {
+    .proposal-content,
     .motivacional-content {
         flex-direction: row;
         justify-content: center;
-        align-items: stretch;
+        align-items: flex-start;
         gap: clamp(20px, 4vw, 40px);
     }
 
+    .proposal-gif {
+        width: clamp(250px, 50vw, 500px);
+        height: auto;
+        aspect-ratio: 16/9;
+        margin-left: 0; /* Remove margem esquerda para alinhamento */
+    }
+
+    .proposal-text {
+        width: clamp(250px, 40vw, 500px);
+        height: auto;
+        margin-left: clamp(20px, 4vw, 40px); /* Ajusta margem para espaçamento */
+    }
+
+    .motivacional-video,
     .motivacional-card {
         width: clamp(200px, 45vw, 300px);
         height: calc(clamp(200px, 45vw, 300px) * 16 / 9);
@@ -532,11 +655,23 @@ footer {
 
 @media (min-width: 1200px) {
     .hero,
+    .proposal,
     .motivacional,
     .benefits,
     .testimonials,
     .books {
         padding: clamp(60px, 5vw, 80px) clamp(20px, 3vw, 40px);
+    }
+
+    .proposal-gif {
+        width: clamp(300px, 50vw, 600px);
+        height: auto;
+        aspect-ratio: 16/9;
+    }
+
+    .proposal-text {
+        width: clamp(300px, 40vw, 600px);
+        height: auto;
     }
 
     .books-grid {

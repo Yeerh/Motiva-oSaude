@@ -14,7 +14,7 @@ body {
     font-family: 'Bungee', sans-serif;
     font-size: clamp(14px, 2.5vw, 16px);
     position: relative;
-    overflow: hidden; /* Evita barras de rolagem por partículas */
+    overflow: hidden;
 }
 
 /* ===== Partículas ===== */
@@ -30,69 +30,69 @@ body {
 /* ===== Contêiner de Login ===== */
 .login-container {
     background: rgba(255, 255, 255, 0.08);
-    padding: clamp(15px, 3vw, 25px);
+    padding: clamp(20px, 4vw, 30px);
     border-radius: 15px;
     text-align: center;
-    width: clamp(280px, 90vw, 320px);
+    width: clamp(280px, 90vw, 360px);
     max-width: 400px;
     color: #fff;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(8px);
-    margin: clamp(10px, 2vw, 20px);
-    z-index: 10; /* Acima das partículas */
+    margin: clamp(15px, 3vw, 25px);
+    z-index: 10;
 }
 
 .login-container img {
-    width: clamp(80px, 20vw, 100px);
-    margin-bottom: clamp(8px, 2vw, 10px);
+    width: clamp(70px, 18vw, 90px);
+    margin-bottom: clamp(10px, 2.5vw, 15px);
 }
 
 .login-container h2 {
-    margin-bottom: clamp(10px, 2.5vw, 15px);
-    font-size: clamp(1.5rem, 4vw, 2rem);
+    margin-bottom: clamp(12px, 3vw, 18px);
+    font-size: clamp(1.4rem, 3.5vw, 1.8rem);
 }
 
 .login-container input {
     width: 100%;
-    padding: clamp(8px, 2vw, 10px);
-    margin: clamp(5px, 1.5vw, 8px) 0;
+    padding: clamp(10px, 2.5vw, 12px);
+    margin: clamp(8px, 2vw, 10px) 0;
     border: none;
     border-radius: 8px;
     outline: none;
-    font-size: clamp(12px, 2.2vw, 14px);
+    font-size: clamp(13px, 2.3vw, 15px);
+    font-family: 'Cantora One', sans-serif;
 }
 
 /* ===== Botões com gradiente animado ===== */
 button {
     width: 100%;
-    padding: clamp(10px, 2.5vw, 12px);
-    margin: clamp(5px, 1.5vw, 8px) 0;
+    padding: clamp(12px, 3vw, 14px);
+    margin: clamp(8px, 2vw, 10px) 0;
     border: none;
     border-radius: 8px;
     background: linear-gradient(90deg, #493BF0, #5b57fa, #7793FE);
     background-size: 300%;
     color: #fff;
-    font-size: clamp(12px, 2.2vw, 14px);
+    font-size: clamp(13px, 2.3vw, 15px);
+    font-family: 'Nova Square', sans-serif;
     cursor: pointer;
-    transition: 0.4s;
+    transition: box-shadow 0.4s, transform 0.2s;
     animation: gradientMove 3s linear infinite;
+    min-height: 44px; /* Para acessibilidade em dispositivos móveis */
 }
 
 button:hover {
     box-shadow: 0 0 18px #7793FE;
-}
-
-@keyframes gradientMove {
-    0% { background-position: 0% 50%; }
-    100% { background-position: 200% 50%; }
+    transform: scale(1.02);
 }
 
 /* ===== Links ===== */
 .extra-links {
-    margin-top: clamp(8px, 2vw, 10px);
+    margin-top: clamp(10px, 2.5vw, 15px);
     display: flex;
     justify-content: space-between;
-    font-size: clamp(11px, 2vw, 13px);
+    font-size: clamp(12px, 2.2vw, 14px);
+    gap: clamp(8px, 2vw, 12px);
 }
 
 .extra-links a {
@@ -100,6 +100,10 @@ button:hover {
     text-decoration: none;
     cursor: pointer;
     transition: color 0.3s;
+    padding: clamp(4px, 1vw, 6px);
+    min-height: 44px; /* Para acessibilidade em dispositivos móveis */
+    display: flex;
+    align-items: center;
 }
 
 .extra-links a:hover {
@@ -122,38 +126,41 @@ button:hover {
 
 .modal-content {
     background: #2e2a7a;
-    padding: clamp(15px, 3vw, 25px);
+    padding: clamp(20px, 4vw, 30px);
     border-radius: 12px;
-    width: clamp(250px, 80vw, 350px);
+    width: clamp(260px, 85vw, 380px);
     max-width: 500px;
     text-align: center;
     color: #fff;
     box-shadow: 0 0 25px #493BF0, 0 0 50px #7793FE inset;
     animation: fadeIn 0.4s ease, lightning 2s infinite;
-    z-index: 1010; /* Acima das partículas */
+    z-index: 1010;
 }
 
 .modal-content h2 {
-    margin-bottom: clamp(10px, 2.5vw, 15px);
-    font-size: clamp(1.2rem, 3.5vw, 1.8rem);
+    margin-bottom: clamp(12px, 3vw, 18px);
+    font-size: clamp(1.3rem, 3.2vw, 1.7rem);
 }
 
 .modal-content input {
     width: 100%;
-    padding: clamp(8px, 2vw, 10px);
-    margin: clamp(5px, 1.5vw, 8px) 0;
+    padding: clamp(10px, 2.5vw, 12px);
+    margin: clamp(8px, 2vw, 10px) 0;
     border: none;
     border-radius: 8px;
     outline: none;
-    font-size: clamp(12px, 2.2vw, 14px);
+    font-size: clamp(13px, 2.3vw, 15px);
+    font-family: 'Cantora One', sans-serif;
 }
 
 .close-btn {
-    font-size: clamp(18px, 4vw, 22px);
+    font-size: clamp(20px, 4.5vw, 24px);
     color: #7793FE;
     float: right;
     cursor: pointer;
     transition: color 0.3s;
+    padding: clamp(4px, 1vw, 6px);
+    min-height: 44px; /* Para acessibilidade */
 }
 
 .close-btn:hover {
@@ -164,7 +171,7 @@ button:hover {
 .success-message {
     display: none;
     color: #b3c7ff;
-    margin-top: clamp(8px, 2vw, 10px);
+    margin-top: clamp(10px, 2.5vw, 15px);
     font-size: clamp(12px, 2.2vw, 14px);
 }
 
@@ -180,69 +187,179 @@ button:hover {
 }
 
 /* ===== Media Queries para Responsividade ===== */
-@media (max-width: 480px) {
+@media (max-width: 360px) {
     .login-container {
-        width: clamp(250px, 85vw, 280px);
-        padding: clamp(10px, 2.5vw, 15px);
+        width: clamp(240px, 90vw, 300px);
+        padding: clamp(15px, 4vw, 20px);
     }
 
     .modal-content {
-        width: clamp(220px, 85vw, 280px);
-        padding: clamp(10px, 2.5vw, 15px);
+        width: clamp(220px, 90vw, 280px);
+        padding: clamp(15px, 4vw, 20px);
     }
 
-    button {
-        padding: clamp(8px, 2vw, 10px);
-        font-size: clamp(11px, 2vw, 13px);
+    .login-container h2,
+    .modal-content h2 {
+        font-size: clamp(1.2rem, 3.5vw, 1.5rem);
+    }
+
+    .login-container input,
+    .modal-content input,
+    button,
+    .extra-links a,
+    .success-message {
+        font-size: clamp(11px, 2.2vw, 13px);
     }
 
     .login-container img {
-        width: clamp(60px, 15vw, 80px);
+        width: clamp(50px, 15vw, 70px);
+    }
+
+    #login-particles {
+        --tsparticles-number: 20;
+        --tsparticles-size: 2;
+        --tsparticles-speed: 0.3;
+    }
+}
+
+@media (max-width: 480px) and (min-width: 361px) {
+    .login-container {
+        width: clamp(260px, 85vw, 320px);
+        padding: clamp(15px, 3.5vw, 25px);
+    }
+
+    .modal-content {
+        width: clamp(240px, 85vw, 320px);
+        padding: clamp(15px, 3.5vw, 25px);
+    }
+
+    .login-container h2,
+    .modal-content h2 {
+        font-size: clamp(1.3rem, 3.5vw, 1.6rem);
+    }
+
+    .login-container input,
+    .modal-content input,
+    button,
+    .extra-links a,
+    .success-message {
+        font-size: clamp(12px, 2.3vw, 14px);
+    }
+
+    .login-container img {
+        width: clamp(60px, 16vw, 80px);
     }
 
     .extra-links {
         flex-direction: column;
-        gap: clamp(5px, 1.5vw, 8px);
+        gap: clamp(8px, 2vw, 12px);
+        align-items: center;
     }
 
-    /* Ajuste de partículas para telas pequenas */
     #login-particles {
-        --tsparticles-number: 30; /* Menos partículas */
+        --tsparticles-number: 30;
+        --tsparticles-size: 2.5;
+        --tsparticles-speed: 0.4;
     }
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
     .login-container {
-        width: clamp(280px, 80vw, 320px);
+        width: clamp(300px, 80vw, 360px);
+        padding: clamp(20px, 3.5vw, 30px);
     }
 
     .modal-content {
-        width: clamp(280px, 75vw, 320px);
+        width: clamp(280px, 80vw, 360px);
+        padding: clamp(20px, 3.5vw, 30px);
+    }
+
+    .login-container h2,
+    .modal-content h2 {
+        font-size: clamp(1.4rem, 3.5vw, 1.8rem);
+    }
+
+    .login-container input,
+    .modal-content input,
+    button,
+    .extra-links a,
+    .success-message {
+        font-size: clamp(13px, 2.3vw, 15px);
+    }
+
+    .login-container img {
+        width: clamp(70px, 18vw, 90px);
+    }
+
+    .extra-links {
+        flex-direction: row;
+        justify-content: space-between;
     }
 
     #login-particles {
         --tsparticles-number: 40;
+        --tsparticles-size: 3;
+        --tsparticles-speed: 0.5;
     }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 769px) and (max-width: 1199px) {
     .login-container {
-        width: clamp(300px, 40vw, 350px);
+        width: clamp(320px, 50vw, 380px);
+        padding: clamp(25px, 3.5vw, 35px);
     }
 
     .modal-content {
-        width: clamp(300px, 40vw, 400px);
+        width: clamp(320px, 50vw, 400px);
+        padding: clamp(25px, 3.5vw, 35px);
+    }
+
+    .login-container img {
+        width: clamp(80px, 18vw, 100px);
+    }
+
+    #login-particles {
+        --tsparticles-number: 50;
+        --tsparticles-size: 3;
+        --tsparticles-speed: 0.5;
     }
 }
 
 @media (min-width: 1200px) {
     .login-container {
-        width: clamp(320px, 30vw, 400px);
-        padding: clamp(20px, 2.5vw, 30px);
+        width: clamp(340px, 35vw, 400px);
+        padding: clamp(25px, 3vw, 35px);
     }
 
     .modal-content {
-        width: clamp(350px, 30vw, 450px);
-        padding: clamp(20px, 2.5vw, 30px);
+        width: clamp(350px, 35vw, 450px);
+        padding: clamp(25px, 3vw, 35px);
+    }
+
+    .login-container img {
+        width: clamp(90px, 15vw, 110px);
+    }
+
+    #login-particles {
+        --tsparticles-number: 60;
+        --tsparticles-size: 3.5;
+        --tsparticles-speed: 0.6;
+    }
+}
+
+/* ===== Ajuste para telas com proporção baixa (ex.: mobile em paisagem) ===== */
+@media (max-height: 500px) {
+    body {
+        align-items: flex-start;
+        padding-top: clamp(10px, 2vw, 15px);
+    }
+
+    .login-container {
+        margin: clamp(10px, 2vw, 15px);
+        padding: clamp(15px, 3vw, 20px);
+    }
+
+    .modal-content {
+        padding: clamp(15px, 3vw, 20px);
     }
 }
